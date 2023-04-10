@@ -1,0 +1,168 @@
+<div class="banner">
+    <app-header></app-header>
+    <h1 style="text-align: center; padding: 20px;">ADMIN DASHBOARD</h1>
+    <div class="container">
+        <div class="box-1">
+            <h1 style="text-align: center; color: yellow;">Products</h1>
+            <hr>
+            <div class="cardcontent" style="margin: 0 20px;">
+                <table class="table text-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">productImage</th>
+                            <th scope="col">productName</th>
+                            <th scope="col">price</th>
+
+                            <th scope="col">Update</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ele of products">
+                            <th scope="row">{{ele.id}}</th>
+                            <td><img src="{{ele.productImage}}" alt="" width="150px" height="150px"></td>
+                            <td>{{ele.productName}}</td>
+                            <td><input type="text" placeholder="{{ele.price}} " #price></td>
+                            <td><button class="btn btn-primary"
+                                    (click)="updateProductPrice(ele.id,price.value)">Update</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="box-4">
+            <h1 style="text-align: center; color: red;">ADD PRODUCT TO DATABASE</h1>
+            <table class="table text-light">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">ImageUrl</th>
+                        <th scope="col">price</th>
+
+                        <th scope="col">Save</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#</th>
+                        <td><input type="text" placeholder="Enter Product Name" #gname></td>
+                        <td><input type="text" placeholder="Enter Imageurl" #gimage></td>
+                        <td><input type="text" placeholder="Enter product Price" #gcreated></td>
+
+                        <td><button class="btn btn-primary"
+                                (click)="savegame(gname.value,gimage.value,gcreated.value)">Save</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="box-1">
+            <h1 style="text-align: center; color: yellow;">FeedBacks</h1>
+            <hr>
+            <div class="cardcontent" style="margin: 0 20px;">
+                <table class="table text-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">feedback</th>
+                            <th scope="col">total</th>
+                            <th scope="col">orderCreatedAt</th>
+                            <th scope="col">total</th>
+                            <th scope="col">userid</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ele of orders">
+                            <th scope="row">{{ele.id}}</th>
+                            <td>{{ele.feedback}}</td>
+                            <td>{{ele.total}}</td>
+                            <td>{{ele.orderCreatedAt}}</td>
+                            <td>{{ele.total}}</td>
+                            <td>{{ele.userid}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- <div class="box-3">
+            <h1 style="text-align: center; color: red;">ADD GAME TO PLAY CARD</h1>
+            <input type="number" placeholder="Enter the Playcard Id" #pid>
+            <input type="number" placeholder="Enter the GameId" #gid>
+            <button class="btn btn-primary" (click)="AddGameToCard(pid.value,gid.value)">AddGame</button>
+
+        </div>
+        <div class="box-4">
+            <h1 style="text-align: center; color: red;">ADD GAME TO DATABASE</h1>
+            <table class="table text-light">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">ImageUrl</th>
+                        <th scope="col">createdby</th>
+                        <th scope="col">level</th>
+                        <th scope="col">Update</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#</th>
+                        <td><input type="text" placeholder="Enter Game Name" #gname></td>
+                        <td><input type="text" placeholder="Enter Imageurl" #gimage></td>
+                        <td><input type="text" placeholder="Enter Creattedby" #gcreated></td>
+                        <td><input type="text" placeholder="Enter Level" #glevel></td>
+                        <td><button class="btn btn-primary"
+                                (click)="savegame(gname.value,gimage.value,gcreated.value,glevel.value)">Save</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="box-5">
+            <h1 style="text-align: center; color: red;">ADD PLAYCARD</h1>
+            <table class="table text-light">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Offer</th>
+
+                        <th scope="col">Update</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#</th>
+                        <td><input type="text" placeholder="Enter Playcard Name" #pname></td>
+                        <td><input type="text" placeholder="Enter Price" #pprice></td>
+                        <td><input type="text" placeholder="Enter Offer" #poffer></td>
+                        <td><button class="btn btn-primary"
+                                (click)="saveplaycard(pname.value,pprice.value,poffer.value)">Save</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+</div>
